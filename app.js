@@ -4,10 +4,22 @@ var mongoose = require('mongoose');
 var express = require('express');
 var logger = require('morgan');
 var path = require('path');
-var cors = require('cors()');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+mongoose
+	.connect(process.env.MONGO_DB, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
+	.then(() => {
+		console.log('MONGO DB CONNECTED');
+	})
+	.catch((error) => {
+		console.log(error);
+	});
 
 var app = express();
 
