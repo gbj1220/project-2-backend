@@ -18,7 +18,7 @@ const applyFunc = async (req, res) => {
 		const savedApplicant = await newApplicant.save();
 
 		res.json({
-			Applicant: savedApplicant,
+			savedApplicant,
 		});
 	} catch (error) {
 		console.log(error);
