@@ -9,6 +9,8 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+require('dotenv').config();
+
 mongoose
 	.connect(process.env.MONGO_DB, {
 		useNewUrlParser: true,
